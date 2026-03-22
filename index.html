@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dr. Naveen Bhatnagar – CV Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ── EXACT COLOUR TOKENS from naveen06111972.github.io ── */
+:root {
+  --bg:        #0d1117;   /* deep dark bg */
+  --bg2:       #161b22;   /* card bg */
+  --bg3:       #1c2333;   /* inner card / row bg */
+  --border:    #30363d;   /* border */
+  --border2:   #3d444d;
+  --teal:      #2dd4bf;   /* primary accent — teal/cyan */
+  --teal2:     #14b8a6;
+  --blue:      #58a6ff;   /* secondary accent — blue links */
+  --purple:    #a78bfa;
+  --green:     #3fb950;
+  --amber:     #d29922;
+  --red:       #f85149;
+  --text:      #e6edf3;   /* primary text */
+  --text2:     #8b949e;   /* muted text */
+  --text3:     #484f58;   /* very muted */
+  --sans:      'Inter', -apple-system, sans-serif;
+  --display:   'Poppins', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.6;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(13,17,23,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;
+}
+.nav-logo{font-family:var(--display);font-size:15px;font-weight:700;color:var(--text);letter-spacing:-0.01em}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem}
+.nav-links a{color:var(--text2);font-size:12.5px;font-weight:500;letter-spacing:0.02em;transition:color .18s}
+.nav-links a:hover{color:var(--teal);text-decoration:none}
+.live-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(45,212,191,0.1);color:var(--teal);border:1px solid rgba(45,212,191,0.25);font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:.06em}
+.live-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── HERO ── */
+.hero-wrap{background:linear-gradient(135deg,#0d1f3c 0%,#0a1628 40%,#0d1117 100%);border-bottom:1px solid var(--border)}
+.hero{max-width:1180px;margin:0 auto;padding:4rem 1.5rem 3rem;display:grid;grid-template-columns:1fr 160px;gap:2rem;align-items:center}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.9rem;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--teal)}
+.hero-name{font-family:var(--display);font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-0.02em;color:var(--text);margin-bottom:.5rem}
+.hero-name em{color:var(--teal);font-style:normal}
+.hero-roles{font-size:13.5px;color:var(--text2);margin-bottom:.5rem}
+.hero-roles span{color:var(--text);font-weight:500}
+.hero-desc{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:1.4rem;max-width:640px}
+.hero-desc strong{color:var(--text);font-weight:500}
+.htags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.4rem}
+.htag{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;letter-spacing:.03em}
+.ht-teal{background:rgba(45,212,191,.12);color:var(--teal);border:1px solid rgba(45,212,191,.22)}
+.ht-blue{background:rgba(88,166,255,.12);color:var(--blue);border:1px solid rgba(88,166,255,.22)}
+.ht-purple{background:rgba(167,139,250,.12);color:var(--purple);border:1px solid rgba(167,139,250,.22)}
+.ht-green{background:rgba(63,185,80,.12);color:var(--green);border:1px solid rgba(63,185,80,.22)}
+.ht-amber{background:rgba(210,153,34,.12);color:var(--amber);border:1px solid rgba(210,153,34,.22)}
+.hero-links{display:flex;flex-wrap:wrap;gap:1rem}
+.hero-links a,.hero-links span{color:var(--text2);font-size:12.5px;display:flex;align-items:center;gap:5px;transition:color .18s}
+.hero-links a:hover{color:var(--teal);text-decoration:none}
+.avatar{width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,#1c2333,#2d3748);border:2px solid var(--teal);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:40px;font-weight:800;color:var(--teal)}
+
+/* ── METRICS ── */
+.metrics-wrap{background:var(--bg2);border-bottom:1px solid var(--border)}
+.metrics{max-width:1180px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:repeat(5,1fr)}
+.m-item{padding:1.4rem 1rem;text-align:center;border-right:1px solid var(--border)}
+.m-item:last-child{border-right:none}
+.m-val{font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--text);line-height:1}
+.m-val sup{font-size:1rem;color:var(--teal);font-weight:700}
+.m-lbl{font-size:11px;color:var(--text3);margin-top:4px;letter-spacing:.05em;text-transform:uppercase}
+
+/* ── UPCOMING SESSION ── */
+.upcoming{
+  max-width:1180px;margin:1.5rem auto 0;padding:0 1.5rem;
+}
+.upcoming-card{
+  background:linear-gradient(135deg,rgba(45,212,191,.08) 0%,rgba(88,166,255,.06) 100%);
+  border:1.5px solid var(--teal);border-radius:12px;
+  padding:1rem 1.25rem;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;
+}
+.upcoming-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue))}
+.up-badge{display:inline-flex;align-items:center;gap:5px;background:var(--teal);color:#0d1117;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;flex-shrink:0}
+.up-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:#0d1117;animation:blink 1.4s ease-in-out infinite}
+.up-content{flex:1}
+.up-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
+.up-org{font-size:12px;color:var(--teal);margin-bottom:4px}
+.up-time{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--text2);background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:4px 10px}
+.up-time strong{color:var(--text)}
+
+/* ── MAIN LAYOUT ── */
+.wrap{max-width:1180px;margin:1.5rem auto 0;padding:0 1.5rem 3rem;display:grid;grid-template-columns:1fr 310px;gap:1.5rem}
+
+/* ── CARDS ── */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.4rem 1.5rem;margin-bottom:1.25rem}
+.card:last-child{margin-bottom:0}
+.card-title{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:1.1rem;padding-bottom:.65rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.card-title::before{content:'';display:inline-block;width:3px;height:11px;background:var(--teal);border-radius:2px}
+
+/* ── TIMELINE ── */
+.tl{padding-left:16px;position:relative}
+.tl::before{content:'';position:absolute;left:3px;top:6px;bottom:6px;width:1px;background:var(--border2)}
+.tl-item{position:relative;margin-bottom:1.3rem}
+.tl-item:last-child{margin-bottom:0}
+.dot{position:absolute;left:-16px;top:5px;width:9px;height:9px;border-radius:50%;border:2px solid var(--teal);background:var(--bg)}
+.dot.live{background:var(--teal);box-shadow:0 0 6px rgba(45,212,191,.5)}
+.dot.amber{border-color:var(--amber)}
+.dot.blue{border-color:var(--blue)}
+.dot.purple{border-color:var(--purple)}
+.tl-role{font-size:13.5px;font-weight:600;color:var(--text)}
+.tl-org{font-size:12px;color:var(--teal);margin-top:1px}
+.tl-period{font-size:11px;color:var(--text3);margin-top:1px}
+.tl-desc{font-size:12px;color:var(--text2);margin-top:5px;line-height:1.55}
+.tl-desc strong{color:var(--green);font-weight:600}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.proj-card{display:block;text-decoration:none;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;transition:border-color .18s,transform .18s}
+.proj-card:hover{border-color:var(--teal);transform:translateY(-2px);text-decoration:none}
+.pbadge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-bottom:5px}
+.pb-t{background:rgba(45,212,191,.15);color:var(--teal)}
+.pb-b{background:rgba(88,166,255,.15);color:var(--blue)}
+.pb-p{background:rgba(167,139,250,.15);color:var(--purple)}
+.pb-g{background:rgba(63,185,80,.15);color:var(--green)}
+.pb-a{background:rgba(210,153,34,.15);color:var(--amber)}
+.proj-name{font-size:12.5px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3px}
+.proj-arrow{color:var(--text3);font-size:12px;margin-left:3px;flex-shrink:0}
+.proj-desc{font-size:11px;color:var(--text2);line-height:1.4}
+
+/* ── SKILL BARS ── */
+.sk{margin-bottom:10px}
+.sk-top{display:flex;justify-content:space-between;margin-bottom:4px}
+.sk-name{font-size:12px;color:var(--text2)}
+.sk-pct{font-size:11px;color:var(--text3)}
+.sk-bar{height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--teal),var(--blue))}
+
+/* ── EDUCATION ── */
+.edu-item{display:flex;gap:11px;margin-bottom:11px;padding-bottom:11px;border-bottom:1px solid var(--border)}
+.edu-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.edu-pill{width:40px;height:40px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:700;color:var(--teal);letter-spacing:.02em;flex-shrink:0;text-align:center;line-height:1.25}
+.edu-deg{font-size:13px;font-weight:600;color:var(--text)}
+.edu-inst{font-size:11.5px;color:var(--text2);margin-top:1px}
+.edu-yr{font-size:10.5px;color:var(--text3);margin-top:1px}
+
+/* ── CERT ── */
+.cert-row{display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:9px;margin-bottom:6px}
+.cert-row:last-child{margin-bottom:0}
+.cert-icon{width:28px;height:28px;border-radius:7px;background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.2);display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:700;color:var(--teal);flex-shrink:0}
+.cert-name{font-size:12px;color:var(--text)}
+.cert-from{font-size:10.5px;color:var(--text3)}
+
+/* ── PILLS ── */
+.pill-wrap{display:flex;flex-wrap:wrap;gap:5px}
+.pill{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--bg3);color:var(--text2);border:1px solid var(--border)}
+
+/* ── PUBLICATIONS ── */
+.pub-item{padding:10px 0;border-bottom:1px solid var(--border)}
+.pub-item:last-child{border-bottom:none;padding-bottom:0}
+.pub-title{font-size:12.5px;font-weight:500;color:var(--text);line-height:1.4}
+.pub-meta{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* ── CONFERENCES ── */
+.conf-row{display:flex;gap:11px;margin-bottom:9px;align-items:flex-start}
+.conf-row:last-child{margin-bottom:0}
+.conf-yr{font-size:9.5px;font-weight:700;background:var(--bg3);color:var(--teal);border:1px solid var(--border);padding:3px 6px;border-radius:5px;flex-shrink:0;letter-spacing:.04em;margin-top:1px}
+.conf-name{font-size:12.5px;font-weight:500;color:var(--text)}
+.conf-sub{font-size:11px;color:var(--text2);margin-top:2px}
+
+/* ── ASSOCIATIONS ── */
+.assoc-row{display:flex;gap:9px;margin-bottom:10px;align-items:flex-start}
+.assoc-row:last-child{margin-bottom:0}
+.assoc-ic{width:32px;height:32px;border-radius:8px;background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.15);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.assoc-name{font-size:13px;font-weight:600;color:var(--text)}
+.assoc-role{font-size:11px;color:var(--text2);margin-top:1px}
+
+/* ── ACHIEVEMENTS ── */
+.ach-row{display:flex;gap:9px;margin-bottom:11px;align-items:flex-start}
+.ach-row:last-child{margin-bottom:0}
+.ach-n{font-family:var(--display);font-size:1.5rem;font-weight:800;color:var(--border2);line-height:1;flex-shrink:0;width:24px;text-align:right}
+.ach-t{font-size:12px;color:var(--text2);line-height:1.55;padding-top:1px}
+.ach-t strong{color:var(--green);font-weight:600}
+
+/* ── GUEST LECTURES ── */
+.gl-row{display:flex;gap:9px;margin-bottom:9px;align-items:flex-start}
+.gl-row:last-child{margin-bottom:0}
+.gl-ic{width:26px;height:26px;border-radius:7px;background:rgba(210,153,34,.1);border:1px solid rgba(210,153,34,.2);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.gl-name{font-size:12.5px;font-weight:500;color:var(--text)}
+.gl-inst{font-size:11px;color:var(--text2);margin-top:1px}
+
+/* ── CONTACT ── */
+.ct-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border)}
+.ct-row:last-child{border-bottom:none}
+.ct-ic{width:28px;height:28px;border-radius:7px;background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.15);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.ct-text{font-size:13px;color:var(--text2)}
+.ct-text a{color:var(--blue)}
+.ct-text a:hover{color:var(--teal)}
+
+/* ── PERSONAL ── */
+.p-tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.p-tbl td{padding:5px 0;border-bottom:1px solid var(--border)}
+.p-tbl tr:last-child td{border-bottom:none}
+.p-tbl td:first-child{color:var(--text3);width:100px}
+.p-tbl td:last-child{color:var(--text2)}
+
+/* ── KEY HIGHLIGHTS ── */
+.hl-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hl-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem}
+.hl-icon{font-size:20px;margin-bottom:6px}
+.hl-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px}
+.hl-sub{font-size:11px;color:var(--text2)}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:2rem 1rem;color:var(--text3);font-size:12px;border-top:1px solid var(--border)}
+footer a{color:var(--teal)}
+
+/* ── SECTION ANCHOR ── */
+section{scroll-margin-top:65px}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero{animation:fadeUp .65s ease both}
+.m-item:nth-child(1){animation:fadeUp .5s .05s ease both}
+.m-item:nth-child(2){animation:fadeUp .5s .12s ease both}
+.m-item:nth-child(3){animation:fadeUp .5s .19s ease both}
+.m-item:nth-child(4){animation:fadeUp .5s .26s ease both}
+.m-item:nth-child(5){animation:fadeUp .5s .33s ease both}
+
+/* ── RESPONSIVE ── */
+@media(max-width:880px){
+  .wrap{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr}
+  .avatar{display:none}
+  .metrics{grid-template-columns:repeat(3,1fr)}
+  .m-item:nth-child(4),.m-item:nth-child(5){border-top:1px solid var(--border)}
+  .proj-grid{grid-template-columns:1fr}
+  .hl-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Dr. <span>Naveen</span> Bhatnagar</div>
+  <div class="nav-links">
+    <a href="#summary">Summary</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#publications">Publications</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="live-badge">Open to Opportunities</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+<div class="hero">
+  <div>
+    <div class="eyebrow">Academic &amp; Industry Leader · 25+ Years</div>
+    <div class="hero-name">Dr. <em>Naveen</em><br>Bhatnagar</div>
+    <div class="hero-roles">Professor · Researcher · <span>AI/ML Expert</span></div>
+    <div class="hero-desc">
+      Ex-Associate Dean &amp; Ex-Associate Director, Chandigarh University · Ex-Director NIMT ·
+      Specialist in AI/ML Curriculum, Campus Placement &amp; Institutional Building.
+      Associated with <strong>AIMA</strong>, <strong>SPJIMR</strong> &amp; <strong>NIRA Bangalore</strong>.
+    </div>
+    <div class="htags">
+      <span class="htag ht-teal">AI / ML</span>
+      <span class="htag ht-blue">Training &amp; Placement</span>
+      <span class="htag ht-purple">Curriculum Design</span>
+      <span class="htag ht-green">Business Analytics</span>
+      <span class="htag ht-teal">Generative AI</span>
+      <span class="htag ht-amber">Agentic AI</span>
+      <span class="htag ht-purple">Robotics</span>
+    </div>
+    <div class="hero-links">
+      <span>📍 Noida, UP, India</span>
+      <a href="mailto:nims4cat@gmail.com">✉ nims4cat@gmail.com</a>
+      <a href="tel:+917011330521">📞 70113-30521</a>
+      <a href="https://www.linkedin.com/in/dr-naveen-bhatnagar-8a9bb688" target="_blank">👥 LinkedIn</a>
+      <a href="https://naveen06111972.github.io" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+  <div class="avatar">NB</div>
+</div>
+</div>
+
+<!-- METRICS -->
+<div class="metrics-wrap">
+  <div class="metrics">
+    <div class="m-item"><div class="m-val">25<sup>+</sup></div><div class="m-lbl">Years Exp.</div></div>
+    <div class="m-item"><div class="m-val">9</div><div class="m-lbl">Live Projects</div></div>
+    <div class="m-item"><div class="m-val">3</div><div class="m-lbl">Expert Panels</div></div>
+    <div class="m-item"><div class="m-val">3</div><div class="m-lbl">Publications</div></div>
+    <div class="m-item"><div class="m-val">7<sup>+</sup></div><div class="m-lbl">Degrees</div></div>
+  </div>
+</div>
+
+<!-- UPCOMING SESSION -->
+<div class="upcoming">
+  <div class="upcoming-card">
+    <div class="up-badge">&#9679;&nbsp; Upcoming Session</div>
+    <div class="up-content">
+      <div class="up-title">SPJIMR – MAT/ATMA Preparatory Online Session</div>
+      <div class="up-org">S.P. Jain Institute of Management &amp; Research (SPJIMR)</div>
+      <div class="up-time">📅 <strong>Sat, 18 Apr 2026</strong> &nbsp;·&nbsp; 🕐 <strong>11:30 AM – 1:00 PM (IST)</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="wrap">
+
+  <!-- LEFT COLUMN -->
+  <div>
+
+    <!-- SUMMARY -->
+    <section id="summary">
+    <div class="card">
+      <div class="card-title">Professional Summary</div>
+      <p style="font-size:13px;color:var(--text2);line-height:1.7">
+        Prof. (Dr.) Naveen Bhatnagar is a distinguished academician with over <strong style="color:var(--text)">25 years</strong> of experience in Industry &amp; Education. He has worked as Associate Dean SOET, Associate Director DCPD at Chandigarh University, and Director/Manager across various Universities, Colleges and Corporate organisations. Associated with <strong style="color:var(--teal)">AIMA</strong> as Expert/Observer/SME, <strong style="color:var(--teal)">SPJIMR</strong> as Expert Panel member since May 2023, and <strong style="color:var(--teal)">NIRA</strong> (No Droit Indian Robotics Assistant, Bangalore) as expert panel member.
+        <br><br>
+        Presently associated with <strong style="color:var(--text)">Torah Learning Solutions</strong> as Senior Manager Training, imparting Trainings/Placement in Galgotia University, Greater Noida since September 2025. Core expertise spans AI/ML/Deep Learning, Business Analytics, Campus Recruitment Training, Curriculum Development, and Institutional Building.
+      </p>
+    </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+    <div class="card">
+      <div class="card-title">Work Experience</div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="dot live"></div>
+          <div class="tl-role">Senior Manager – Training Development</div>
+          <div class="tl-org">TORAH® Learning Solutions</div>
+          <div class="tl-period">📅 Sep 2025 – Present &nbsp;|&nbsp; 📍 Galgotia University, Greater Noida</div>
+          <div class="tl-desc">Imparting Training &amp; Placement support to engineering students at Galgotia University.</div>
+        </div>
+        <div class="tl-item">
+          <div class="dot blue"></div>
+          <div class="tl-role">Professor cum Associate Dean – SOET</div>
+          <div class="tl-org">C.T. University</div>
+          <div class="tl-period">📅 Jan 2025 – Mar 2025</div>
+          <div class="tl-desc">Led curriculum development, review &amp; modernisation across departments. Oversaw admissions, scholarships &amp; placement. Monitored academic performance and faculty effectiveness.</div>
+        </div>
+        <div class="tl-item">
+          <div class="dot amber"></div>
+          <div class="tl-role">Director</div>
+          <div class="tl-org">NIMT – National Institute of Management &amp; Technology</div>
+          <div class="tl-period">📅 May 2023 – Jul 2023 &nbsp;|&nbsp; 📍 Greater Noida</div>
+          <div class="tl-desc">Developed strategic vision &amp; long-term academic plans. Chaired academic council, governing body &amp; policy review committees.</div>
+        </div>
+        <div class="tl-item">
+          <div class="dot"></div>
+          <div class="tl-role">Associate Director – DCPD</div>
+          <div class="tl-org">Chandigarh University</div>
+          <div class="tl-period">📅 Mar 2022 – Mar 2023 &nbsp;|&nbsp; 📍 Gharuan, Mohali</div>
+          <div class="tl-desc">
+            Launched multi-tiered Campus-to-Corporate (C2C) training programme.<br>
+            Designed Placement Data Dashboard — reduced turnaround by <strong>80%</strong> with real-time ROI analytics.<br>
+            'Finishing School' module → <strong>25% improvement</strong> in first-attempt interview conversion rates.<br>
+            Established "ACCESS @CU Alumni Chapter"; key member for NAAC audit.
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="dot blue"></div>
+          <div class="tl-role">Assistant Professor – Placement &amp; Training</div>
+          <div class="tl-org">Sharda University</div>
+          <div class="tl-period">📅 Feb 2018 – Feb 2022 &nbsp;|&nbsp; 📍 Greater Noida</div>
+          <div class="tl-desc">Organised Smart India Hackathon 2019. LMS (Peoplesoft) training, timetable via ASC Software. Teaching &amp; Academic Coordinator for ISO certifications.</div>
+        </div>
+        <div class="tl-item">
+          <div class="dot purple"></div>
+          <div class="tl-role">Assistant Professor (Management) – AICE</div>
+          <div class="tl-org">Amity University</div>
+          <div class="tl-period">📅 Oct 2013 – Jan 2017 &nbsp;|&nbsp; 📍 Noida</div>
+          <div class="tl-desc">Teaching &amp; Curriculum Designing for Management programmes.</div>
+        </div>
+        <div class="tl-item">
+          <div class="dot"></div>
+          <div class="tl-role">Faculty / Lecturer (CS)</div>
+          <div class="tl-org">NIMS (multiple stints)</div>
+          <div class="tl-period">📅 May 2012 – Sep 2013 &amp; Feb 2017 – Jan 2018</div>
+        </div>
+        <div class="tl-item">
+          <div class="dot"></div>
+          <div class="tl-role">Assistant Professor (Management)</div>
+          <div class="tl-org">IMR</div>
+          <div class="tl-period">📅 Apr 2008 – Jun 2010 &nbsp;|&nbsp; 📍 Ghaziabad, UP</div>
+        </div>
+        <div class="tl-item">
+          <div class="dot"></div>
+          <div class="tl-role">Lecturer (CS)</div>
+          <div class="tl-org">I.B. (PG) College, Panipat — 6 Years 10 Months</div>
+        </div>
+        <div class="tl-item">
+          <div class="dot amber"></div>
+          <div class="tl-role">Manager</div>
+          <div class="tl-org">Gupta International, Panipat</div>
+          <div class="tl-period">📅 Apr 1997 – May 2000</div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+    <div class="card">
+      <div class="card-title">Projects</div>
+      <div class="proj-grid">
+        <a class="proj-card" href="https://naveen06111972.github.io/NAAC-INSPECTION-DASHBOARD/" target="_blank">
+          <div class="pbadge pb-t">NAAC</div>
+          <div class="proj-name">NAAC Inspection Dashboard <span class="proj-arrow">↗</span></div>
+          <div class="proj-desc">Inspection process for universities offering online courses</div>
+        </a>
+        <a class="proj-card" href="https://naveen06111972.github.io/DASHBOARD-ONLINE-LEARNING-VS-DE/" target="_blank">
+          <div class="pbadge pb-b">Education</div>
+          <div class="proj-name">Online Learning vs DE Dashboard <span class="proj-arrow">↗</span></div>
+          <div class="proj-desc">Comparative analytics: online learning vs distance education</div>
+        </a>
+        <a class="proj-card" href="https://naveen06111972.github.io/ODL-DE-DASHBOARD/" target="_blank">
+          <div class="pbadge pb-g">UGC / ODL</div>
+          <div class="proj-name">UGC ODL Dashboard <span class="proj-arrow">↗</span></div>
+          <div class="proj-desc">Open &amp; distance learning analytics dashboard</div>
+        </a>
+        <a class="proj-card" href="https://naveen06111972.github.io/PLA-INT-CER/" target="_blank">
+          <div class="pbadge pb-t">Analytics</div>
+          <div class="proj-name">Placement Analytics Dashboard <span class="proj-arrow">↗</span></div>
+          <div class="proj-desc">Placement data, internship stats &amp; real-time ROI analytics</div>
+        </a>
+        <a class="proj-card" href="https://naveen06111972.github.io/SALES-DASHBOARD/" target="_blank">
+          <div class="pbadge pb-b">Sales</div>
+          <div class="proj-name">Sales Dashboard <span class="proj-arrow">↗</span></div>
+          <div class="proj-desc">Interactive sales analytics &amp; performance visualisation</div>
+        </a>
+        <a class="proj-card" href="https://naveen06111972.github.io/MACHINE-LEARNING-LINEARREGRESSION-MODEL/" target="_blank">
+          <div class="pbadge pb-p">Machine Learning</div>
+          <div class="proj-name">ML – Linear Regression Model <span class="proj-arrow">↗</span></div>
+          <div class="proj-desc">Predictive analytics &amp; model training demonstration</div>
+        </a>
+        <a class="proj-card" href="https://naveen06111972.github.io/PREDICTING-CREDIT-RISK/" target="_blank">
+          <div class="pbadge pb-a">FinTech / ML</div>
+          <div class="proj-name">Credit Risk Scoring Model <span class="proj-arrow">↗</span></div>
+          <div class="proj-desc">Predicts likelihood of loan default using ML techniques</div>
+        </a>
+        <a class="proj-card" href="https://naveen06111972.github.io/AI-VS-HUMAN-CONTENT-STARATEGY-DASHBOARD-/" target="_blank">
+          <div class="pbadge pb-p">Generative AI</div>
+          <div class="proj-name">GenAI Content Strategy Dashboard <span class="proj-arrow">↗</span></div>
+          <div class="proj-desc">Human vs AI engagement rate measurement using GPT-4</div>
+        </a>
+        <a class="proj-card" href="https://naveen06111972.github.io/CALCULATOR/" target="_blank">
+          <div class="pbadge pb-g">Web App</div>
+          <div class="proj-name">Calculator App <span class="proj-arrow">↗</span></div>
+          <div class="proj-desc">Clean, functional calculator demonstrating front-end skills</div>
+        </a>
+      </div>
+    </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="card">
+      <div class="card-title">Key Achievements</div>
+      <div class="ach-row"><div class="ach-n">01</div><div class="ach-t">Reduced placement response turnaround by <strong>80%</strong> via centralised Placement Data Dashboard at Chandigarh University</div></div>
+      <div class="ach-row"><div class="ach-n">02</div><div class="ach-t"><strong>25% improvement</strong> in first-attempt interview conversions through the 'Finishing School' module</div></div>
+      <div class="ach-row"><div class="ach-n">03</div><div class="ach-t">Launched multi-tiered Campus-to-Corporate (C2C) programme bridging the academic-industry skill gap</div></div>
+      <div class="ach-row"><div class="ach-n">04</div><div class="ach-t">Key NAAC audit team member at Chandigarh University — contributed to institutional accreditation</div></div>
+      <div class="ach-row"><div class="ach-n">05</div><div class="ach-t">Organiser &amp; mentor at <strong>Smart India Hackathon 2019</strong>; Event Head, School of Engineering &amp; Technology, Sharda University</div></div>
+      <div class="ach-row"><div class="ach-n">06</div><div class="ach-t">Established "ACCESS @CU Alumni Chapter" — strengthened industry-academia linkage at Chandigarh University</div></div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+    <div class="card">
+      <div class="card-title">Research &amp; Publications</div>
+      <div class="pub-item">
+        <div class="pub-title">Summary of Mobile Ad Hoc Networking Technology and Current IETF Standardization Efforts</div>
+        <div class="pub-meta">Naveen Bhatnagar, DK Pandey &amp; Neeru Gupta · VSRD-IJCSIT Vol. 2(6), 2012, pp. 534–547</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Book Chapter: Mathematics and Computer Science – Research Updates</div>
+        <div class="pub-meta">Selected as book chapter · BP International</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Deployed Memory Management Through Object Oriented Approach</div>
+        <div class="pub-meta">Naveen Bhatnagar, DK Pandey &amp; Amit Kumar Shrivastava</div>
+      </div>
+    </div>
+    </section>
+
+    <!-- CONFERENCES -->
+    <section id="conferences">
+    <div class="card">
+      <div class="card-title">Conferences &amp; FDPs</div>
+      <div class="conf-row"><div class="conf-yr">2023</div><div><div class="conf-name">Industry 4.1 India Conference (I4IC)</div><div class="conf-sub">New Delhi</div></div></div>
+      <div class="conf-row"><div class="conf-yr">2022</div><div><div class="conf-name">Industry 4.0 India Conference (I4IC)</div><div class="conf-sub">New Delhi</div></div></div>
+      <div class="conf-row"><div class="conf-yr">2021</div><div><div class="conf-name">IEEE ICCCIS – Internet of Things Conference</div><div class="conf-sub">Two-day conference co-sponsored by IEEE, Feb 19–20, 2021</div></div></div>
+      <div class="conf-row"><div class="conf-yr">2019</div><div><div class="conf-name">IEEE ICCCIS – IoT Workshop</div><div class="conf-sub">Oct 19, 2019</div></div></div>
+      <div class="conf-row"><div class="conf-yr">FDP</div><div><div class="conf-name">International FDP — Recent Trends in CS &amp; IT</div><div class="conf-sub">IAPFE Delaware USA · Indo-UK Confederation of Science &amp; Technology, London UK</div></div></div>
+      <div class="conf-row"><div class="conf-yr">FDP</div><div><div class="conf-name">Five-Day FDP — Research &amp; Innovation: Filing Patent, IPR &amp; Copyrights</div><div class="conf-sub">Sharda University</div></div></div>
+      <div class="conf-row"><div class="conf-yr">FDP</div><div><div class="conf-name">Five-Day FDP — Design Thinking for Creativity &amp; Innovation</div><div class="conf-sub">Sharda University</div></div></div>
+      <div class="conf-row"><div class="conf-yr">WS</div><div><div class="conf-name">ERP Conference conducted by Microsoft</div></div></div>
+    </div>
+    </section>
+
+    <!-- GUEST LECTURES -->
+    <section id="lectures">
+    <div class="card">
+      <div class="card-title">Guest Lectures</div>
+      <div class="gl-row"><div class="gl-ic">🎓</div><div><div class="gl-name">MAT/ATMA Preparatory Online Session for Working Executives</div><div class="gl-inst">S.P. Jain Institute of Management &amp; Research (SPJIMR)</div></div></div>
+      <div class="gl-row"><div class="gl-ic">🎓</div><div><div class="gl-name">Chief Guest — Opportunities in Govt. &amp; Private Sectors</div><div class="gl-inst">SSIMT Dinanagar, Affiliated to PTU Jalandhar</div></div></div>
+      <div class="gl-row"><div class="gl-ic">🎓</div><div><div class="gl-name">Chief Guest — Career Options After Graduation</div><div class="gl-inst">Govt. College Panipat, Affiliated to Kurukshetra University</div></div></div>
+      <div class="gl-row"><div class="gl-ic">🎓</div><div><div class="gl-name">Guest Lecture — Emerging Opportunities in Govt. Sector</div><div class="gl-inst">Mata Sahib Kaur Khalsa College, Gurdaspur</div></div></div>
+    </div>
+    </section>
+
+  </div><!-- /left -->
+
+  <!-- RIGHT COLUMN -->
+  <div>
+
+    <!-- KEY HIGHLIGHTS -->
+    <div class="card">
+      <div class="card-title">Key Highlights</div>
+      <div class="hl-grid">
+        <div class="hl-card"><div class="hl-icon">🎯</div><div class="hl-title">Training &amp; Placement</div><div class="hl-sub">CRT online &amp; offline; 80% faster turnaround</div></div>
+        <div class="hl-card"><div class="hl-icon">🤖</div><div class="hl-title">AI/ML Expertise</div><div class="hl-sub">9 live GitHub projects in AI, ML &amp; Analytics</div></div>
+        <div class="hl-card"><div class="hl-icon">🏛️</div><div class="hl-title">Proven Leadership</div><div class="hl-sub">Dean, Director &amp; Associate Director roles</div></div>
+        <div class="hl-card"><div class="hl-icon">📄</div><div class="hl-title">Research &amp; Publication</div><div class="hl-sub">3 publications incl. IEEE &amp; book chapter</div></div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <section id="skills">
+    <div class="card">
+      <div class="card-title">Skills</div>
+      <div class="sk"><div class="sk-top"><span class="sk-name">Training &amp; Placement</span><span class="sk-pct">96%</span></div><div class="sk-bar"><div class="sk-fill" style="width:96%"></div></div></div>
+      <div class="sk"><div class="sk-top"><span class="sk-name">Curriculum Development</span><span class="sk-pct">92%</span></div><div class="sk-bar"><div class="sk-fill" style="width:92%"></div></div></div>
+      <div class="sk"><div class="sk-top"><span class="sk-name">Academic Administration</span><span class="sk-pct">90%</span></div><div class="sk-bar"><div class="sk-fill" style="width:90%"></div></div></div>
+      <div class="sk"><div class="sk-top"><span class="sk-name">LMS / EdTech</span><span class="sk-pct">86%</span></div><div class="sk-bar"><div class="sk-fill" style="width:86%"></div></div></div>
+      <div class="sk"><div class="sk-top"><span class="sk-name">Data Analytics</span><span class="sk-pct">82%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%"></div></div></div>
+      <div class="sk"><div class="sk-top"><span class="sk-name">AI / ML</span><span class="sk-pct">78%</span></div><div class="sk-bar"><div class="sk-fill" style="width:78%"></div></div></div>
+      <div class="sk"><div class="sk-top"><span class="sk-name">Business Analytics</span><span class="sk-pct">76%</span></div><div class="sk-bar"><div class="sk-fill" style="width:76%"></div></div></div>
+      <div class="sk"><div class="sk-top"><span class="sk-name">Generative AI</span><span class="sk-pct">74%</span></div><div class="sk-bar"><div class="sk-fill" style="width:74%"></div></div></div>
+      <div class="sk"><div class="sk-top"><span class="sk-name">Python / ML Frameworks</span><span class="sk-pct">68%</span></div><div class="sk-bar"><div class="sk-fill" style="width:68%"></div></div></div>
+    </div>
+    </section>
+
+    <!-- TOP SKILLS PILLS -->
+    <div class="card">
+      <div class="card-title">Top Skills</div>
+      <div class="pill-wrap">
+        <span class="pill">Artificial Intelligence</span>
+        <span class="pill">Machine Learning</span>
+        <span class="pill">Deep Learning</span>
+        <span class="pill">Python</span>
+        <span class="pill">Business Analytics</span>
+        <span class="pill">Computer Science</span>
+        <span class="pill">Curriculum Development</span>
+        <span class="pill">Training &amp; Placement</span>
+        <span class="pill">Soft Skills Training</span>
+        <span class="pill">Career Strategy Advice</span>
+        <span class="pill">MOOCs Integration</span>
+        <span class="pill">Online Examination</span>
+        <span class="pill">Robotics</span>
+        <span class="pill">LMS / Blackboard</span>
+      </div>
+    </div>
+
+    <!-- RESEARCH INTERESTS -->
+    <div class="card">
+      <div class="card-title">Research Interests</div>
+      <div class="pill-wrap">
+        <span class="pill" style="color:var(--teal);border-color:rgba(45,212,191,.3)">AI / ML</span>
+        <span class="pill" style="color:var(--blue);border-color:rgba(88,166,255,.3)">Deep Learning</span>
+        <span class="pill" style="color:var(--green);border-color:rgba(63,185,80,.3)">Business Analytics</span>
+        <span class="pill" style="color:var(--amber);border-color:rgba(210,153,34,.3)">Robotics</span>
+        <span class="pill" style="color:var(--purple);border-color:rgba(167,139,250,.3)">Generative AI</span>
+        <span class="pill" style="color:var(--teal);border-color:rgba(45,212,191,.3)">Agentic AI</span>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <section id="education">
+    <div class="card">
+      <div class="card-title">Education</div>
+      <div class="edu-item"><div class="edu-pill">Ph.D</div><div><div class="edu-deg">Computer Science Engineering</div><div class="edu-inst">CMJ University, Shillong</div><div class="edu-yr">2012</div></div></div>
+      <div class="edu-item"><div class="edu-pill">M.Phil</div><div><div class="edu-deg">Computer Science</div><div class="edu-inst">VMU, Tamil Nadu</div><div class="edu-yr">2009</div></div></div>
+      <div class="edu-item"><div class="edu-pill">M.Sc</div><div><div class="edu-deg">Computer Science</div><div class="edu-inst">GJU Hisar</div><div class="edu-yr">2002</div></div></div>
+      <div class="edu-item"><div class="edu-pill">M.Sc</div><div><div class="edu-deg">Mathematics</div><div class="edu-inst">Kurukshetra University</div><div class="edu-yr">1999</div></div></div>
+      <div class="edu-item"><div class="edu-pill">MBA</div><div><div class="edu-deg">Human Resource Management</div><div class="edu-inst">IGNOU</div><div class="edu-yr">2002</div></div></div>
+      <div class="edu-item"><div class="edu-pill">B.Ed</div><div><div class="edu-deg">Education</div><div class="edu-inst">TDL Memorial College, KUK</div><div class="edu-yr">2004</div></div></div>
+      <div class="edu-item"><div class="edu-pill">B.Sc</div><div><div class="edu-deg">Science</div><div class="edu-inst">Kurukshetra University</div><div class="edu-yr">1993</div></div></div>
+      <div class="edu-item"><div class="edu-pill">Cert.</div><div><div class="edu-deg">Data Analytics (11-Month Programme)</div><div class="edu-inst">Sharda University</div></div></div>
+      <div class="edu-item"><div class="edu-pill">Cert.</div><div><div class="edu-deg">AI/ML (1-Year Programme)</div><div class="edu-inst">DUCAT</div></div></div>
+    </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <div class="card">
+      <div class="card-title">Certifications</div>
+      <div class="cert-row"><div class="cert-icon">GN</div><div><div class="cert-name">Generative AI Mastermind</div><div class="cert-from">Outskill</div></div></div>
+      <div class="cert-row"><div class="cert-icon">AG</div><div><div class="cert-name">Agentic AI</div><div class="cert-from">agentacademy.ai</div></div></div>
+      <div class="cert-row"><div class="cert-icon">GPT</div><div><div class="cert-name">AI Tools &amp; ChatGPT</div><div class="cert-from">be10X</div></div></div>
+      <div class="cert-row"><div class="cert-icon">AI</div><div><div class="cert-name">1-Year AI/ML Certificate</div><div class="cert-from">DUCAT</div></div></div>
+      <div class="cert-row"><div class="cert-icon">DA</div><div><div class="cert-name">Data Analytics (11 months)</div><div class="cert-from">Sharda University</div></div></div>
+    </div>
+
+    <!-- ASSOCIATIONS -->
+    <div class="card">
+      <div class="card-title">Associations</div>
+      <div class="assoc-row"><div class="assoc-ic">🏛</div><div><div class="assoc-name">AIMA – New Delhi</div><div class="assoc-role">Expert / Observer / SME</div></div></div>
+      <div class="assoc-row"><div class="assoc-ic">🎓</div><div><div class="assoc-name">SPJIMR</div><div class="assoc-role">Expert Panel Member – since May 2023</div></div></div>
+      <div class="assoc-row"><div class="assoc-ic">🤖</div><div><div class="assoc-name">NIRA Bangalore</div><div class="assoc-role">Expert Panel, Indian Robotics Assistant</div></div></div>
+      <div class="assoc-row"><div class="assoc-ic">🏢</div><div><div class="assoc-name">Industry-Academic Liaison</div><div class="assoc-role">Corporate Relations</div></div></div>
+    </div>
+
+    <!-- PERSONAL -->
+    <div class="card">
+      <div class="card-title">Personal Details</div>
+      <table class="p-tbl">
+        <tr><td>DOB</td><td>06 Nov 1972</td></tr>
+        <tr><td>Nationality</td><td>Indian</td></tr>
+        <tr><td>Location</td><td>Greater Noida, UP</td></tr>
+      </table>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact">
+    <div class="card">
+      <div class="card-title">Contact</div>
+      <div class="ct-row"><div class="ct-ic">✉</div><div class="ct-text"><a href="mailto:nims4cat@gmail.com">nims4cat@gmail.com</a></div></div>
+      <div class="ct-row"><div class="ct-ic">📞</div><div class="ct-text"><a href="tel:+917011330521">70113-30521</a></div></div>
+      <div class="ct-row"><div class="ct-ic">📍</div><div class="ct-text">Noida, Uttar Pradesh, India</div></div>
+      <div class="ct-row"><div class="ct-ic">👥</div><div class="ct-text"><a href="https://www.linkedin.com/in/dr-naveen-bhatnagar-8a9bb688" target="_blank">LinkedIn Profile</a></div></div>
+      <div class="ct-row"><div class="ct-ic">💻</div><div class="ct-text"><a href="https://naveen06111972.github.io" target="_blank">GitHub Projects</a></div></div>
+    </div>
+    </section>
+
+  </div><!-- /right -->
+
+</div><!-- /wrap -->
+
+<footer>
+  © 2025 Dr. Naveen Bhatnagar &nbsp;·&nbsp;
+  <a href="mailto:nims4cat@gmail.com">nims4cat@gmail.com</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/dr-naveen-bhatnagar-8a9bb688" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+  <a href="https://naveen06111972.github.io" target="_blank">GitHub</a>
+</footer>
+
+</body>
+</html>
